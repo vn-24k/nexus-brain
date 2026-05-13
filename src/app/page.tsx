@@ -8,10 +8,10 @@ export default function Home() {
         <SignedIn><UserButton afterSignOutUrl="/" /></SignedIn>
       </div>
       <BrainCircuit className="w-20 h-20 text-indigo-500 mx-auto mb-6" />
-      <h1 className="text-6xl font-bold tracking-tighter mb-4 text-white">Nexus Brain</h1>
+      <h1 className="text-6xl font-bold mb-4">Nexus Brain</h1>
       <p className="text-zinc-400 text-lg mb-8">Centro de Comando Estratégico.</p>
       <SignedIn>
-        <a href="/painel" className="inline-block px-12 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 shadow-2xl shadow-indigo-500/50">
+        <a href="/painel" className="inline-block px-12 py-4 bg-indigo-600 text-white font-bold rounded-2xl shadow-xl shadow-indigo-500/40">
           ENTRAR NO PAINEL
         </a>
       </SignedIn>
