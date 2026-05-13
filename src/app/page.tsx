@@ -8,18 +8,18 @@ export default function Home() {
         <SignedIn><UserButton afterSignOutUrl="/" /></SignedIn>
       </div>
       <div className="text-center space-y-6">
-        <BrainCircuit className="w-20 h-20 text-purple-600 mx-auto" />
+        <BrainCircuit className="w-20 h-20 text-indigo-500 mx-auto" />
         <h1 className="text-6xl font-bold tracking-tighter">Nexus Brain</h1>
-        <p className="text-zinc-400 text-lg">Seu centro de comando estratégico.</p>
+        <p className="text-zinc-400 text-lg">Sistema de Comando Estratégico.</p>
         <div className="pt-6">
           <SignedIn>
-            <a href="/painel" className="inline-block px-12 py-4 bg-purple-600 text-white font-bold rounded-2xl hover:bg-purple-700 shadow-2xl shadow-purple-500/30 transition-all">
-              Acessar Painel
+            <a href="/painel" className="inline-block px-12 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 shadow-2xl shadow-indigo-500/50 transition-all active:scale-90">
+              ENTRAR NO PAINEL
             </a>
           </SignedIn>
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="px-12 py-4 bg-white text-black font-bold rounded-2xl">Entrar</button>
+              <button className="px-12 py-4 bg-white text-black font-bold rounded-2xl">Acessar</button>
             </SignInButton>
           </SignedOut>
         </div>
