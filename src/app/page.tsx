@@ -1,5 +1,4 @@
 import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import Link from "next/link";
 import { BrainCircuit } from "lucide-react";
 
 export default function Home() {
@@ -10,20 +9,20 @@ export default function Home() {
       </div>
       
       <div className="text-center space-y-6">
-        <BrainCircuit className="w-16 h-16 text-purple-500 mx-auto" />
-        <h1 className="text-5xl font-bold">Nexus Brain</h1>
-        <p className="text-gray-400">Seu centro de comando estratégico via Termux.</p>
+        <BrainCircuit className="w-20 h-20 text-purple-600 mx-auto" />
+        <h1 className="text-6xl font-bold tracking-tighter">Nexus Brain</h1>
+        <p className="text-zinc-400 text-lg">Centro de comando estratégico.</p>
         
-        <div className="pt-4">
+        <div className="pt-6">
           <SignedIn>
-            <Link href="/dashboard" className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-purple-500 hover:text-white transition-all">
+            <a href="/dashboard" className="inline-block px-10 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 shadow-lg shadow-purple-500/20 transition-all active:scale-95">
               Começar Agora
-            </Link>
+            </a>
           </SignedIn>
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="px-8 py-3 bg-white text-black font-bold rounded-full">
-                Fazer Login
+              <button className="px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200">
+                Acessar Sistema
               </button>
             </SignInButton>
           </SignedOut>
