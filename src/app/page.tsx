@@ -1,32 +1,32 @@
-import { UserButton, SignInButton, SignIn, SignOutButton } from "@clerk/nextjs";
-import { syncUser } from "../actions/user";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import Link from "next/link";
 import { BrainCircuit } from "lucide-react";
 
-export default async function Home() {
-  await syncUser();
-
+export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-slate-950 text-white">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-6">
       <div className="fixed top-6 right-6">
-        <SignIn><UserButton afterSignOutUrl="/" /></SignIn>
+        <SignedIn><UserButton afterSignOutUrl="/" /></SignedIn>
       </div>
-      <div className="max-w-4xl w-full text-center space-y-8">
-        <div className="flex justify-center">
-          <BrainCircuit className="w-12 h-12 text-purple-500" />
-        </div>
-        <h1 className="text-5xl font-extrabold tracking-tight">Nexus <span className="text-purple-500">Brain</span></h1>
-        <p className="text-slate-400 text-lg">Seu centro de comando estratégico via Termux.</p>
+      
+      <div className="text-center space-y-6">
+        <BrainCircuit className="w-16 h-16 text-purple-500 mx-auto" />
+        <h1 className="text-5xl font-bold">Nexus Brain</h1>
+        <p className="text-gray-400">Seu centro de comando estratégico via Termux.</p>
+        
         <div className="pt-4">
-          <SignOutButton>
+          <SignedIn>
+            <Link href="/dashboard" className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-purple-500 hover:text-white transition-all">
+              Começar Agora
+            </Link>
+          </SignedIn>
+          <SignedOut>
             <SignInButton mode="modal">
-              <button className="px-8 py-4 bg-white text-black font-bold rounded-full transition-all hover:scale-105">
-                Começar Agora
+              <button className="px-8 py-3 bg-white text-black font-bold rounded-full">
+                Fazer Login
               </button>
             </SignInButton>
-          </SignOutButton>
-          <SignIn>
-            <a href="/dashboard" className="px-8 py-4 bg-purple-600 font-bold rounded-full">Acessar Dashboard</a>
-          </SignIn>
+          </SignedOut>
         </div>
       </div>
     </main>
