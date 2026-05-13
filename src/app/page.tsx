@@ -1,5 +1,5 @@
 import { UserButton, SignInButton, SignIn, SignOutButton } from "@clerk/nextjs";
-import { syncUser } from "@/actions/user";
+import { syncUser } from "../actions/user";
 import { BrainCircuit } from "lucide-react";
 
 export default async function Home() {
